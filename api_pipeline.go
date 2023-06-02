@@ -15,6 +15,7 @@ import (
 	_nethttp "net/http"
 	_neturl "net/url"
 	"strings"
+
 	"github.com/antihax/optional"
 )
 
@@ -28,16 +29,17 @@ type PipelineApiService service
 
 // CreateContextValueOpts Optional parameters for the method 'CreateContextValue'
 type CreateContextValueOpts struct {
-    V1CreateContextValuesRequest optional.Interface
+	V1CreateContextValuesRequest optional.Interface
 }
 
 /*
 CreateContextValue create pipeline context values
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param optional nil or *CreateContextValueOpts - Optional Parameters:
- * @param "V1CreateContextValuesRequest" (optional.Interface of V1CreateContextValuesRequest) - 
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param optional nil or *CreateContextValueOpts - Optional Parameters:
+  - @param "V1CreateContextValuesRequest" (optional.Interface of V1CreateContextValuesRequest) -
+
 @return V1Context
 */
 func (a *PipelineApiService) CreateContextValue(ctx _context.Context, projectName string, pipelineName string, localVarOptionals *CreateContextValueOpts) (V1Context, *_nethttp.Response, error) {
@@ -52,9 +54,9 @@ func (a *PipelineApiService) CreateContextValue(ctx _context.Context, projectNam
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -133,15 +135,16 @@ func (a *PipelineApiService) CreateContextValue(ctx _context.Context, projectNam
 
 // CreatePipelineOpts Optional parameters for the method 'CreatePipeline'
 type CreatePipelineOpts struct {
-    V1CreatePipelineRequest optional.Interface
+	V1CreatePipelineRequest optional.Interface
 }
 
 /*
 CreatePipeline create pipeline
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param optional nil or *CreatePipelineOpts - Optional Parameters:
- * @param "V1CreatePipelineRequest" (optional.Interface of V1CreatePipelineRequest) - 
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param optional nil or *CreatePipelineOpts - Optional Parameters:
+  - @param "V1CreatePipelineRequest" (optional.Interface of V1CreatePipelineRequest) -
+
 @return V1PipelineBase
 */
 func (a *PipelineApiService) CreatePipeline(ctx _context.Context, projectName string, localVarOptionals *CreatePipelineOpts) (V1PipelineBase, *_nethttp.Response, error) {
@@ -156,7 +159,7 @@ func (a *PipelineApiService) CreatePipeline(ctx _context.Context, projectName st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -235,10 +238,11 @@ func (a *PipelineApiService) CreatePipeline(ctx _context.Context, projectName st
 
 /*
 DeleteContextValue delete pipeline context value
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param contextName pipeline context name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param contextName pipeline context name
+
 @return V1ContextNameResponse
 */
 func (a *PipelineApiService) DeleteContextValue(ctx _context.Context, projectName string, pipelineName string, contextName string) (V1ContextNameResponse, *_nethttp.Response, error) {
@@ -253,11 +257,11 @@ func (a *PipelineApiService) DeleteContextValue(ctx _context.Context, projectNam
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts/{contextName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"contextName"+"}", _neturl.QueryEscape(parameterToString(contextName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"contextName"+"}", _neturl.QueryEscape(parameterToString(contextName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -327,9 +331,10 @@ func (a *PipelineApiService) DeleteContextValue(ctx _context.Context, projectNam
 
 /*
 DeletePipeline delete pipeline
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+
 @return V1PipelineMetaResponse
 */
 func (a *PipelineApiService) DeletePipeline(ctx _context.Context, projectName string, pipelineName string) (V1PipelineMetaResponse, *_nethttp.Response, error) {
@@ -344,9 +349,9 @@ func (a *PipelineApiService) DeletePipeline(ctx _context.Context, projectName st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -416,10 +421,11 @@ func (a *PipelineApiService) DeletePipeline(ctx _context.Context, projectName st
 
 /*
 DeletePipelineRun delete pipeline run
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return V1PipelineRunMeta
 */
 func (a *PipelineApiService) DeletePipelineRun(ctx _context.Context, projectName string, pipelineName string, runName string) (V1PipelineRunMeta, *_nethttp.Response, error) {
@@ -434,11 +440,11 @@ func (a *PipelineApiService) DeletePipelineRun(ctx _context.Context, projectName
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -508,9 +514,10 @@ func (a *PipelineApiService) DeletePipelineRun(ctx _context.Context, projectName
 
 /*
 GetPipeline get pipeline
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param pipelineName pipeline name
- * @param projectName project name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param pipelineName pipeline name
+  - @param projectName project name
+
 @return V1GetPipelineResponse
 */
 func (a *PipelineApiService) GetPipeline(ctx _context.Context, pipelineName string, projectName string) (V1GetPipelineResponse, *_nethttp.Response, error) {
@@ -525,9 +532,9 @@ func (a *PipelineApiService) GetPipeline(ctx _context.Context, pipelineName stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -597,10 +604,11 @@ func (a *PipelineApiService) GetPipeline(ctx _context.Context, pipelineName stri
 
 /*
 GetPipelineRun get pipeline run
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return V1PipelineRunBase
 */
 func (a *PipelineApiService) GetPipelineRun(ctx _context.Context, projectName string, pipelineName string, runName string) (V1PipelineRunBase, *_nethttp.Response, error) {
@@ -615,11 +623,11 @@ func (a *PipelineApiService) GetPipelineRun(ctx _context.Context, projectName st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -689,11 +697,12 @@ func (a *PipelineApiService) GetPipelineRun(ctx _context.Context, projectName st
 
 /*
 GetPipelineRunInput get pipeline run input
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
- * @param step query by specific step name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+  - @param step query by specific step name
+
 @return V1GetPipelineRunInputResponse
 */
 func (a *PipelineApiService) GetPipelineRunInput(ctx _context.Context, projectName string, pipelineName string, runName string, step string) (V1GetPipelineRunInputResponse, *_nethttp.Response, error) {
@@ -708,11 +717,11 @@ func (a *PipelineApiService) GetPipelineRunInput(ctx _context.Context, projectNa
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/input"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -783,17 +792,18 @@ func (a *PipelineApiService) GetPipelineRunInput(ctx _context.Context, projectNa
 
 // GetPipelineRunLogOpts Optional parameters for the method 'GetPipelineRunLog'
 type GetPipelineRunLogOpts struct {
-    Step optional.String
+	Step optional.String
 }
 
 /*
 GetPipelineRunLog get pipeline run log
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
- * @param optional nil or *GetPipelineRunLogOpts - Optional Parameters:
- * @param "Step" (optional.String) -  query by specific step name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+  - @param optional nil or *GetPipelineRunLogOpts - Optional Parameters:
+  - @param "Step" (optional.String) -  query by specific step name
+
 @return V1GetPipelineRunLogResponse
 */
 func (a *PipelineApiService) GetPipelineRunLog(ctx _context.Context, projectName string, pipelineName string, runName string, localVarOptionals *GetPipelineRunLogOpts) (V1GetPipelineRunLogResponse, *_nethttp.Response, error) {
@@ -808,11 +818,11 @@ func (a *PipelineApiService) GetPipelineRunLog(ctx _context.Context, projectName
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/log"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -885,11 +895,12 @@ func (a *PipelineApiService) GetPipelineRunLog(ctx _context.Context, projectName
 
 /*
 GetPipelineRunOutput get pipeline run output
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
- * @param step query by specific step name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+  - @param step query by specific step name
+
 @return V1GetPipelineRunOutputResponse
 */
 func (a *PipelineApiService) GetPipelineRunOutput(ctx _context.Context, projectName string, pipelineName string, runName string, step string) (V1GetPipelineRunOutputResponse, *_nethttp.Response, error) {
@@ -904,11 +915,11 @@ func (a *PipelineApiService) GetPipelineRunOutput(ctx _context.Context, projectN
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/output"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -979,10 +990,11 @@ func (a *PipelineApiService) GetPipelineRunOutput(ctx _context.Context, projectN
 
 /*
 GetPipelineRunStatus get pipeline run status
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return V1alpha1WorkflowRunStatus
 */
 func (a *PipelineApiService) GetPipelineRunStatus(ctx _context.Context, projectName string, pipelineName string, runName string) (V1alpha1WorkflowRunStatus, *_nethttp.Response, error) {
@@ -997,11 +1009,11 @@ func (a *PipelineApiService) GetPipelineRunStatus(ctx _context.Context, projectN
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/status"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1071,9 +1083,10 @@ func (a *PipelineApiService) GetPipelineRunStatus(ctx _context.Context, projectN
 
 /*
 ListContextValues list pipeline context values
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+
 @return V1ListContextValueResponse
 */
 func (a *PipelineApiService) ListContextValues(ctx _context.Context, projectName string, pipelineName string) (V1ListContextValueResponse, *_nethttp.Response, error) {
@@ -1088,9 +1101,9 @@ func (a *PipelineApiService) ListContextValues(ctx _context.Context, projectName
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1160,16 +1173,17 @@ func (a *PipelineApiService) ListContextValues(ctx _context.Context, projectName
 
 // ListPipelineRunsOpts Optional parameters for the method 'ListPipelineRuns'
 type ListPipelineRunsOpts struct {
-    Status optional.String
+	Status optional.String
 }
 
 /*
 ListPipelineRuns list pipeline runs
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param optional nil or *ListPipelineRunsOpts - Optional Parameters:
- * @param "Status" (optional.String) -  query identifier of the status
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param optional nil or *ListPipelineRunsOpts - Optional Parameters:
+  - @param "Status" (optional.String) -  query identifier of the status
+
 @return V1ListPipelineRunResponse
 */
 func (a *PipelineApiService) ListPipelineRuns(ctx _context.Context, projectName string, pipelineName string, localVarOptionals *ListPipelineRunsOpts) (V1ListPipelineRunResponse, *_nethttp.Response, error) {
@@ -1184,9 +1198,9 @@ func (a *PipelineApiService) ListPipelineRuns(ctx _context.Context, projectName 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1259,18 +1273,19 @@ func (a *PipelineApiService) ListPipelineRuns(ctx _context.Context, projectName 
 
 // ListPipelinesOpts Optional parameters for the method 'ListPipelines'
 type ListPipelinesOpts struct {
-    Query optional.String
-    ProjectName optional.String
-    Detailed optional.String
+	Query       optional.String
+	ProjectName optional.String
+	Detailed    optional.String
 }
 
 /*
 ListPipelines list pipelines
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListPipelinesOpts - Optional Parameters:
- * @param "Query" (optional.String) -  Fuzzy search based on name or description
- * @param "ProjectName" (optional.String) -  query pipelines within a project
- * @param "Detailed" (optional.String) -  query pipelines with detail
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param optional nil or *ListPipelinesOpts - Optional Parameters:
+  - @param "Query" (optional.String) -  Fuzzy search based on name or description
+  - @param "ProjectName" (optional.String) -  query pipelines within a project
+  - @param "Detailed" (optional.String) -  query pipelines with detail
+
 @return V1ListPipelineResponse
 */
 func (a *PipelineApiService) ListPipelines(ctx _context.Context, localVarOptionals *ListPipelinesOpts) (V1ListPipelineResponse, *_nethttp.Response, error) {
@@ -1362,10 +1377,11 @@ func (a *PipelineApiService) ListPipelines(ctx _context.Context, localVarOptiona
 
 /*
 ResumePipelineRun resume suspend pipeline run
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return string
 */
 func (a *PipelineApiService) ResumePipelineRun(ctx _context.Context, projectName string, pipelineName string, runName string) (string, *_nethttp.Response, error) {
@@ -1380,11 +1396,11 @@ func (a *PipelineApiService) ResumePipelineRun(ctx _context.Context, projectName
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/resume"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1454,16 +1470,17 @@ func (a *PipelineApiService) ResumePipelineRun(ctx _context.Context, projectName
 
 // RunPipelineOpts Optional parameters for the method 'RunPipeline'
 type RunPipelineOpts struct {
-    V1RunPipelineRequest optional.Interface
+	V1RunPipelineRequest optional.Interface
 }
 
 /*
 RunPipeline run pipeline
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param optional nil or *RunPipelineOpts - Optional Parameters:
- * @param "V1RunPipelineRequest" (optional.Interface of V1RunPipelineRequest) - 
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param optional nil or *RunPipelineOpts - Optional Parameters:
+  - @param "V1RunPipelineRequest" (optional.Interface of V1RunPipelineRequest) -
+
 @return V1PipelineRun
 */
 func (a *PipelineApiService) RunPipeline(ctx _context.Context, projectName string, pipelineName string, localVarOptionals *RunPipelineOpts) (V1PipelineRun, *_nethttp.Response, error) {
@@ -1478,9 +1495,9 @@ func (a *PipelineApiService) RunPipeline(ctx _context.Context, projectName strin
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/run"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1559,10 +1576,11 @@ func (a *PipelineApiService) RunPipeline(ctx _context.Context, projectName strin
 
 /*
 StopPipeline stop pipeline run
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return V1PipelineRunMeta
 */
 func (a *PipelineApiService) StopPipeline(ctx _context.Context, projectName string, pipelineName string, runName string) (V1PipelineRunMeta, *_nethttp.Response, error) {
@@ -1577,11 +1595,11 @@ func (a *PipelineApiService) StopPipeline(ctx _context.Context, projectName stri
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/stop"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1651,10 +1669,11 @@ func (a *PipelineApiService) StopPipeline(ctx _context.Context, projectName stri
 
 /*
 TerminatePipelineRun resume suspend pipeline run
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param runName pipeline run name
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param runName pipeline run name
+
 @return string
 */
 func (a *PipelineApiService) TerminatePipelineRun(ctx _context.Context, projectName string, pipelineName string, runName string) (string, *_nethttp.Response, error) {
@@ -1669,11 +1688,11 @@ func (a *PipelineApiService) TerminatePipelineRun(ctx _context.Context, projectN
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/terminate"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runName"+"}", _neturl.QueryEscape(parameterToString(runName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1743,17 +1762,18 @@ func (a *PipelineApiService) TerminatePipelineRun(ctx _context.Context, projectN
 
 // UpdateContextValueOpts Optional parameters for the method 'UpdateContextValue'
 type UpdateContextValueOpts struct {
-    V1UpdateContextValuesRequest optional.Interface
+	V1UpdateContextValuesRequest optional.Interface
 }
 
 /*
 UpdateContextValue update pipeline context value
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param contextName pipeline context name
- * @param optional nil or *UpdateContextValueOpts - Optional Parameters:
- * @param "V1UpdateContextValuesRequest" (optional.Interface of V1UpdateContextValuesRequest) - 
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param contextName pipeline context name
+  - @param optional nil or *UpdateContextValueOpts - Optional Parameters:
+  - @param "V1UpdateContextValuesRequest" (optional.Interface of V1UpdateContextValuesRequest) -
+
 @return V1Context
 */
 func (a *PipelineApiService) UpdateContextValue(ctx _context.Context, projectName string, pipelineName string, contextName string, localVarOptionals *UpdateContextValueOpts) (V1Context, *_nethttp.Response, error) {
@@ -1768,11 +1788,11 @@ func (a *PipelineApiService) UpdateContextValue(ctx _context.Context, projectNam
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts/{contextName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"contextName"+"}", _neturl.QueryEscape(parameterToString(contextName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"contextName"+"}", _neturl.QueryEscape(parameterToString(contextName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1851,16 +1871,17 @@ func (a *PipelineApiService) UpdateContextValue(ctx _context.Context, projectNam
 
 // UpdatePipelineOpts Optional parameters for the method 'UpdatePipeline'
 type UpdatePipelineOpts struct {
-    V1UpdatePipelineRequest optional.Interface
+	V1UpdatePipelineRequest optional.Interface
 }
 
 /*
 UpdatePipeline update pipeline
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectName project name
- * @param pipelineName pipeline name
- * @param optional nil or *UpdatePipelineOpts - Optional Parameters:
- * @param "V1UpdatePipelineRequest" (optional.Interface of V1UpdatePipelineRequest) - 
+  - @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param projectName project name
+  - @param pipelineName pipeline name
+  - @param optional nil or *UpdatePipelineOpts - Optional Parameters:
+  - @param "V1UpdatePipelineRequest" (optional.Interface of V1UpdatePipelineRequest) -
+
 @return V1PipelineBase
 */
 func (a *PipelineApiService) UpdatePipeline(ctx _context.Context, projectName string, pipelineName string, localVarOptionals *UpdatePipelineOpts) (V1PipelineBase, *_nethttp.Response, error) {
@@ -1875,9 +1896,9 @@ func (a *PipelineApiService) UpdatePipeline(ctx _context.Context, projectName st
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/api/v1/projects/{projectName}/pipelines/{pipelineName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"projectName"+"}", _neturl.QueryEscape(parameterToString(projectName, "")), -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipelineName"+"}", _neturl.QueryEscape(parameterToString(pipelineName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

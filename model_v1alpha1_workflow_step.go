@@ -8,16 +8,17 @@
  */
 
 package vealapi
+
 // V1alpha1WorkflowStep struct for V1alpha1WorkflowStep
 type V1alpha1WorkflowStep struct {
-	DependsOn []string `json:"dependsOn,omitempty"`
-	If string `json:"if,omitempty"`
-	Inputs []V1alpha1InputItem `json:"inputs,omitempty"`
-	Meta V1alpha1WorkflowStepMeta `json:"meta,omitempty"`
-	Name string `json:"name,omitempty"`
-	Outputs []V1alpha1OutputItem `json:"outputs,omitempty"`
-	Properties string `json:"properties,omitempty"`
-	SubSteps []V1alpha1WorkflowStepBase `json:"subSteps,omitempty"`
-	Timeout string `json:"timeout,omitempty"`
-	Type string `json:"type"`
+	DependsOn  []string                   `json:"dependsOn,omitempty"`
+	If         string                     `json:"if,omitempty"`
+	Inputs     []V1alpha1InputItem        `json:"inputs,omitempty"`
+	Meta       V1alpha1WorkflowStepMeta   `json:"meta,omitempty"`
+	Name       string                     `json:"name,omitempty"`
+	Outputs    []V1alpha1OutputItem       `json:"outputs,omitempty"`
+	Properties map[string]interface{}     `json:"properties,omitempty"`
+	SubSteps   []V1alpha1WorkflowStepBase `json:"subSteps,omitempty"`
+	Timeout    string                     `json:"timeout,omitempty"`
+	Type       string                     `json:"type"`
 }

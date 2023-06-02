@@ -8,8 +8,9 @@
  */
 
 package vealapi
+
 // V1alpha1OutputItem struct for V1alpha1OutputItem
 type V1alpha1OutputItem struct {
-	Name string `json:"name"`
-	ValueFrom string `json:"valueFrom"`
+	Name      string `json:"name"`
+	ValueFrom string `json:"valueFrom" yaml:"valueFrom"`
 }
